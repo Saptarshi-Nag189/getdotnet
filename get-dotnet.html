@@ -1,78 +1,83 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
-<title>Get .NET. Get your app working.</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/main.css" />
+  <meta charset="utf-8">
+  <title>Get .NET. Get your app working.</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
 </head>
-<!--Incoming link look like this: 
-    http://go2.microsoft.com/fwlink/?LinkID=134774&rClrVer=v4.0.30319. Will get mapped to this:
-    http://dotnetsocial.cloudapp.net/GetDotNet?rClrVer=v4.0.30319
-    -->
 
 <body>
-<header>
+  <header>
     <div class="content-wrapper">
-        <div class="float-left">
-            <p class="site-title">
-              Get .NET. Get your app working!
-            </p>
-        </div>
-                <div class="float-right">
-                    <p class="site-title">
-            <!--<img height="40" src="/Assets/dotnet_logo_wide.jpg" />-->
-                        </p>
-        </div>
+      <div class="float-left">
+        <p class="site-title">
+          Get .NET. Get your app working!
+        </p>
+      </div>
+      <div class="float-right">
+        <p class="site-title">
+          <!--<img height="40" src="/Assets/dotnet_logo_wide.jpg" />-->
+        </p>
+      </div>
     </div>
-</header>
-<div id="body">
+  </header>
+  <div id="body">
     <section class="featured">
-        <div class="content-wrapper">
-            <p>An app you tried to use needs <a href="@ViewBag.Request.TargetUrl">.NET Framework @ViewBag.Request.RequestedVersion</a> in order to run. The best version to use is <a href="@ViewBag.Target.TargetUrl">.NET Framework @ViewBag.Target.RequestedVersion</a>, which will start downloading in <span id="time1">5</span> seconds.</p>
+      <div class="content-wrapper">
+        <p>An app you tried to use needs <a href="@ViewBag.Request.TargetUrl">.NET Framework @ViewBag.Request.RequestedVersion</a> in order to run. The best version to use is <a href="@ViewBag.Target.TargetUrl">.NET Framework
+            @ViewBag.Target.RequestedVersion</a>, which will start downloading in <span id="time1">5</span> seconds.</p>
 
-        </div>
+      </div>
     </section>
     <section class="content-wrapper main-content clear-fix">
-        <table class="helpTiles">
-            <tr>
-                <td><a href="@ViewBag.Target.TargetUrl">Download .NET to get my app working</a></td>
-                <td><a href="@ViewBag.Request.TargetUrl">Tell me more</a></td>
-                <td><a href="mailto:dotnethelp@microsoft.com?subject=Help me GetDotNet">I need help</a></td>
-            </tr>
-        </table>
+      <table class="helpTiles">
+        <tr>
+          <td><a href="@ViewBag.Target.TargetUrl">Download .NET to get my app working</a></td>
+          <td><a href="@ViewBag.Request.TargetUrl">Tell me more</a></td>
+          <td><a href="mailto:dotnethelp@microsoft.com?subject=Help me GetDotNet">I need help</a></td>
+        </tr>
+      </table>
 
-        <p>You can select the version you need from the <a href="install-dotnet.html">.NET Framework versions</a> list. If you are a developer, you can look at the <a href="install-dotnet.html">.NET Framework installation and activation</a> documentation.
-        </p>
+      <p>You can select the version you need from the <a href="install-dotnet.html">.NET Framework versions</a> list. If you are a developer, you can look at the <a href="install-dotnet.html">.NET Framework installation and activation</a>
+        documentation.
+      </p>
 
-           </section>
-</div>
+    </section>
+  </div>
 
-<script type="text/javascript">
-
+  <script type="text/javascript">
     window.setTimeout(function() {
-        window.location.href = "@ViewBag.Target.TargetUrl";
+      window.location.href = "@ViewBag.Target.TargetUrl";
     }, 5000);
 
     var time = 5;
     var intervalId = window.setInterval(countdown, 1000);
+
     function countdown() {
-        document.getElementById("time1").innerText = time--;
-        if (time == 0)
-            clearInterval(intervalId);
+      document.getElementById("time1").innerText = time--;
+      if (time == 0)
+        clearInterval(intervalId);
     }
+  </script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-65565245-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-65565245-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
+
 </html>
